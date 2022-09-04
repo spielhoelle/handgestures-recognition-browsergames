@@ -1,5 +1,6 @@
 // @ts-ignore
 import * as handTrack from './node_modules/handtrackjs/src/index.js';
+import './pong'
 
 (async () => {
 	const defaultParams = {
@@ -26,7 +27,7 @@ import * as handTrack from './node_modules/handtrackjs/src/index.js';
 				const predictions = await model.detect(video);
 				console.log('predictions', predictions);
 				model.renderPredictions(predictions, canvas, ctx, video);
-			}, 100)
+			}, 10)
 		});
 	}
 })()

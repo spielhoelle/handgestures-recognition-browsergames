@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 // @ts-ignore
 import * as handTrack from './node_modules/handtrackjs/src/index.js';
+import './pong';
 (() => __awaiter(void 0, void 0, void 0, function* () {
     const defaultParams = {
         flipHorizontal: false,
@@ -33,7 +34,7 @@ import * as handTrack from './node_modules/handtrackjs/src/index.js';
                 const predictions = yield model.detect(video);
                 console.log('predictions', predictions);
                 model.renderPredictions(predictions, canvas, ctx, video);
-            }), 100);
+            }), 10);
         }));
     }
 }))();
