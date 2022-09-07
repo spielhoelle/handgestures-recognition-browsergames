@@ -67,7 +67,7 @@ var downPressed = false;
                     zPressed = false;
                 }
                 model.renderPredictions(predictions, canvas, ctx, video);
-            }), 10);
+            }), 1);
         }));
     }
 }))();

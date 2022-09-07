@@ -65,7 +65,7 @@ interface Prediction {
 					zPressed = false
 				}
 				model.renderPredictions(predictions, canvas, ctx, video);
-			}, 10)
+			}, 1)
 		});
 	}
 })()

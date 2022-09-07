@@ -5,25 +5,26 @@ var height = window.innerHeight;
 var positionPlayer1 = height / 2;
 var positionPlayer2 = height / 2;
 var ballPositionY = height / 2;
-var speedBalleY = 2
+var speedBalleY = 7
 var ballPositionX = length / 2;
-var speedBalleX = 2
+var speedBalleX = 7
+var playerSpeed = 10
 
 export function movePlayer(sPressed: boolean, zPressed: boolean, upPressed: boolean, downPressed: boolean) {
 	const player1 = document.getElementById("player1")
 	const player2 = document.getElementById("player2")
 	if (player1 && player2) {
 		if (sPressed && positionPlayer1 > 0) {
-			player1.style.top = (positionPlayer1 -= 5).toString();
+			player1.style.top = (positionPlayer1 -= playerSpeed).toString();
 		}
 		if (zPressed && positionPlayer1 < height - 105) {
-			player1.style.top = (positionPlayer1 += 5).toString();
+			player1.style.top = (positionPlayer1 += playerSpeed).toString();
 		}
 		if (upPressed && positionPlayer2 > 0) {
-			player2.style.top = (positionPlayer2 -= 5).toString();
+			player2.style.top = (positionPlayer2 -= playerSpeed).toString();
 		}
 		if (downPressed && positionPlayer2 < height - 105) {
-			player2.style.top = (positionPlayer2 += 5).toString();
+			player2.style.top = (positionPlayer2 += playerSpeed).toString();
 		}
 	}
 }
