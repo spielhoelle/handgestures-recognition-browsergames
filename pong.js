@@ -5,10 +5,10 @@ var height = window.innerHeight;
 var positionPlayer1 = height / 2;
 var positionPlayer2 = height / 2;
 var ballPositionY = height / 2;
-var speedBalleY = 7;
+var speedBalleY = 5;
 var ballPositionX = length / 2;
-var speedBalleX = 7;
-var playerSpeed = 10;
+var speedBalleX = 5;
+var playerSpeed = 8;
 export function movePlayer(sPressed, zPressed, upPressed, downPressed) {
     const player1 = document.getElementById("player1");
     const player2 = document.getElementById("player2");
@@ -62,41 +62,9 @@ function changeScore(numero) {
         }
     }
     if (numero == 2) {
-        let scorePlayer2 = document.getElementById("scoreplayer1");
+        let scorePlayer2 = document.getElementById("scoreplayer2");
         if (scorePlayer2) {
             scorePlayer2.innerHTML = (Number(scorePlayer2.innerHTML) + 1).toString();
         }
     }
 }
-// document.addEventListener('keydown', (event) => {
-// 	switch (event.which) {
-// 		case 90:
-// 			zPressed = true;
-// 			break;
-// 		case 83:
-// 			sPressed = true;
-// 			break;
-// 		case 38:
-// 			upPressed = true;
-// 			break;
-// 		case 40:
-// 			downPressed = true;
-// 			break;
-// 	}
-// });
-// document.addEventListener('keyup', (event) => {
-// 	switch (event.which) {
-// 		case 90:
-// 			zPressed = false;
-// 			break;
-// 		case 83:
-// 			sPressed = false;
-// 			break;
-// 		case 38:
-// 			upPressed = false;
-// 			break;
-// 		case 40:
-// 			downPressed = false;
-// 			break;
-// 	}
-// });

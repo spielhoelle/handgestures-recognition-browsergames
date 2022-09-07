@@ -16,7 +16,7 @@ var upPressed = false;
 var downPressed = false;
 (() => __awaiter(void 0, void 0, void 0, function* () {
     const defaultParams = {
-        flipHorizontal: false,
+        flipHorizontal: true,
         outputStride: 16,
         imageScaleFactor: 1,
         maxNumBoxes: 20,

@@ -13,7 +13,7 @@ interface Prediction {
 }
 (async () => {
 	const defaultParams = {
-		flipHorizontal: false,
+		flipHorizontal: true,
 		outputStride: 16,
 		imageScaleFactor: 1,
 		maxNumBoxes: 20,
