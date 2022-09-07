@@ -4,16 +4,12 @@ var length = window.innerWidth;
 var height = window.innerHeight;
 var positionPlayer1 = height / 2;
 var positionPlayer2 = height / 2;
-var zPressed = false;
-var sPressed = false;
-var upPressed = false;
-var downPressed = false;
 var ballPositionY = height / 2;
 var speedBalleY = 2
 var ballPositionX = length / 2;
 var speedBalleX = 2
 
-function movePlayer() {
+export function movePlayer(sPressed: boolean, zPressed: boolean, upPressed: boolean, downPressed: boolean) {
 	const player1 = document.getElementById("player1")
 	const player2 = document.getElementById("player2")
 	if (player1 && player2) {
@@ -31,7 +27,7 @@ function movePlayer() {
 		}
 	}
 }
-function moveBall() {
+export function moveBall() {
 	if (ballPositionY < 0) {
 		speedBalleY = speedBalleY * -1;
 	}
@@ -58,61 +54,64 @@ function moveBall() {
 	}
 }
 
-function changeScore(numero) {
+function changeScore(numero: number) {
 	ballPositionY = height / 2;
 	ballPositionX = length / 2;
 	if (numero == 1) {
-		document.getElementById("scoreplayer1").innerHTML++;
+		let scorePlayer1 = document.getElementById("scoreplayer1")
+		if (scorePlayer1) {
+			scorePlayer1.innerHTML = (Number(scorePlayer1.innerHTML) + 1).toString();
+
+		}
 	}
 	if (numero == 2) {
-		document.getElementById("scoreplayer2").innerHTML++;
+		let scorePlayer2 = document.getElementById("scoreplayer1")
+		if (scorePlayer2) {
+			scorePlayer2.innerHTML = (Number(scorePlayer2.innerHTML) + 1).toString();
 
+		}
 	}
 
 }
 
-function mainLoop() {
-	movePlayer();
-	moveBall();
-	setTimeout(mainLoop, 5);
-}
-document.addEventListener('keydown', (event) => {
-	switch (event.which) {
-		case 90:
-			zPressed = true;
-			break;
-		case 83:
-			sPressed = true;
-			break;
-		case 38:
-			upPressed = true;
-			break;
-		case 40:
-			downPressed = true;
-			break;
 
-	}
+// document.addEventListener('keydown', (event) => {
+// 	switch (event.which) {
+// 		case 90:
+// 			zPressed = true;
+// 			break;
+// 		case 83:
+// 			sPressed = true;
+// 			break;
+// 		case 38:
+// 			upPressed = true;
+// 			break;
+// 		case 40:
+// 			downPressed = true;
+// 			break;
 
-});
+// 	}
 
-document.addEventListener('keyup', (event) => {
-	switch (event.which) {
-		case 90:
-			zPressed = false;
-			break;
-		case 83:
-			sPressed = false;
-			break;
-		case 38:
-			upPressed = false;
-			break;
-		case 40:
-			downPressed = false;
-			break;
-	}
+// });
 
-});
-mainLoop();
+// document.addEventListener('keyup', (event) => {
+// 	switch (event.which) {
+// 		case 90:
+// 			zPressed = false;
+// 			break;
+// 		case 83:
+// 			sPressed = false;
+// 			break;
+// 		case 38:
+// 			upPressed = false;
+// 			break;
+// 		case 40:
+// 			downPressed = false;
+// 			break;
+// 	}
+
+// });
+
 
 
 
